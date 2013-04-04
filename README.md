@@ -4,7 +4,9 @@
 
 \- return dictionary of NSArrays grouped by first character as key
 
-**#pragma mark - Table view data source**
+```objective-c
+#pragma mark - Table view data source
+```
 
 ```objective-c
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
