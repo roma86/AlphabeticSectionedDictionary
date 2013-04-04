@@ -6,14 +6,30 @@
 
 **#pragma mark - Table view data source**
 
-`-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView`
-`return [[self.sections allKeys] count];`
+```objective-c
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+return [[self.sections allKeys] count];
+}
+```
 
-`- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section`
-`return [[[self.sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:section];`
+```objective-c
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+return [[[self.sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:section];
+}
+```
 
-`- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section`
-`return [[self.sections valueForKey:[[[self.sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:section]] count];`
+```objective-c
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+return [[self.sections valueForKey:[[[self.sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:section]] count];
+}
+```
 
-`- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath`
-`cell.textLabel.text = [[self.sections valueForKey:[[[self.sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];`
+```objective-c
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+cell.textLabel.text = [[self.sections valueForKey:[[[self.sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
+}
+```
